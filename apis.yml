@@ -2,7 +2,7 @@ aid: plains-all-american-pipeline
 url: https://raw.githubusercontent.com/api-evangelist/plains-all-american-pipeline/refs/heads/main/apis.yml
 name: Plains All American Pipeline
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Energy
   - Pipeline
@@ -19,7 +19,7 @@ apis:
       - Energy
       - Pipeline
       - Midstream
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.paalp.com
     humanURL: https://developer.paalp.com
     properties:
