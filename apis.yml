@@ -23,6 +23,7 @@ accessModel:
   confidence: low
   source:
   - plans
+  - {url: 'https://www.paalp.com', status: 301, note: 'declared website redirects to https://www.plains.com/ — a different registrable domain (paalp.com -> plains.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/plains-all-american-pipeline.png
