@@ -1,0 +1,298 @@
+generated: '2026-09-17'
+method: probed
+source: 'live GET of /.well-known/* (+ /apis.json, /apis.yml) on every host the record knows: the declared paalp.com
+  domain (and www), the real corporate domain plains.com (apex + www), api.plains.com, ir.plains.com, and the two
+  customer portals linked from https://www.plains.com/customers/tariffs (www.paa-enom.com, shipperappl.plainsallamerican.com).
+  The stub hosts developer.paalp.com and api.paalp.com have NO DNS records and could not be probed.'
+summary: Plains All American publishes no API discovery surface. No security.txt, api-catalog, ai-plugin.json, agent
+  card, apis.json, llms.txt or OAuth authorization-server metadata on any host. The only served documents are two
+  OpenID Connect discovery documents on the Salesforce Experience Cloud customer portals (Enom electronic nominations,
+  Shipper Application Portal) — stock Salesforce platform metadata that fronts human login to gated portals, not
+  a public API. Recorded because the provider genuinely serves them on domains it controls; flagged as platform-authored
+  so nobody reads them as a developer program.
+hosts:
+- host: www.plains.com
+  note: Corporate site (Next.js). Every discovery path answers 404 with the site 404 page; /llms.txt also 404. robots.txt
+    allows all.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: plains.com
+  note: Apex 301s every path to https://www.plains.com/ — the www host carries the real answers.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/api-catalog.json
+    status: 301
+  - path: /.well-known/ai-plugin.json
+    status: 301
+  - path: /.well-known/ucp.json
+    status: 301
+  - path: /.well-known/acp.json
+    status: 301
+  - path: /.well-known/aauth-resource.json
+    status: 301
+  - path: /.well-known/apis.json
+    status: 301
+  - path: /apis.json
+    status: 301
+  - path: /apis.yml
+    status: 301
+  - path: /.well-known/agent-card.json
+    status: 301
+  - path: /.well-known/agent.json
+    status: 301
+- host: api.plains.com
+  note: Host resolves (two AWS IPs) and answers a bare 404 NOT FOUND with an empty body on every path, including
+    /, /openapi.json, /swagger.json, /graphql and /docs. A real host with no public surface and no documentation
+    anywhere naming it.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/api-catalog.json
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: www.paalp.com
+  note: Legacy www host; 301s every path to https://www.plains.com/.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/api-catalog.json
+    status: 301
+  - path: /.well-known/ai-plugin.json
+    status: 301
+  - path: /.well-known/ucp.json
+    status: 301
+  - path: /.well-known/acp.json
+    status: 301
+  - path: /.well-known/aauth-resource.json
+    status: 301
+  - path: /.well-known/apis.json
+    status: 301
+  - path: /apis.json
+    status: 301
+  - path: /apis.yml
+    status: 301
+  - path: /.well-known/agent-card.json
+    status: 301
+  - path: /.well-known/agent.json
+    status: 301
+- host: paalp.com
+  note: Legacy registrable domain declared in apis.yml; 301s every path to https://www.plains.com/.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/api-catalog.json
+    status: 301
+  - path: /.well-known/ai-plugin.json
+    status: 301
+  - path: /.well-known/ucp.json
+    status: 301
+  - path: /.well-known/acp.json
+    status: 301
+  - path: /.well-known/aauth-resource.json
+    status: 301
+  - path: /.well-known/apis.json
+    status: 301
+  - path: /apis.json
+    status: 301
+  - path: /apis.yml
+    status: 301
+  - path: /.well-known/agent-card.json
+    status: 301
+  - path: /.well-known/agent.json
+    status: 301
+- host: ir.plains.com
+  note: Investor-relations host (Q4 Inc / Akamai) answers 403 Access Denied to our probe on every path — a bot challenge,
+    not evidence of absence. Nothing here would be an API surface in any case.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/api-catalog.json
+    status: 403
+  - path: /.well-known/ai-plugin.json
+    status: 403
+  - path: /.well-known/ucp.json
+    status: 403
+  - path: /.well-known/acp.json
+    status: 403
+  - path: /.well-known/aauth-resource.json
+    status: 403
+  - path: /.well-known/apis.json
+    status: 403
+  - path: /apis.json
+    status: 403
+  - path: /apis.yml
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  - path: /.well-known/agent.json
+    status: 403
+- host: www.paa-enom.com
+  note: Plains Electronic Nominations (Enom) customer portal — a Salesforce Experience Cloud site; / JS-redirects
+    to /s/login. The only 200 is the Salesforce platform-generated OIDC discovery document; every other path returns
+    the Salesforce 401 page.
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: plains-all-american-pipeline-paa-enom-openid-configuration.json
+    content_type: application/json;charset=UTF-8
+    note: 'Real OpenID Connect discovery document (issuer https://www.paa-enom.com, authorization_code + refresh_token
+      grants, PKCE S256). PLATFORM-AUTHORED: this is the stock Salesforce Experience Cloud identity metadata (the
+      scopes_supported list is the generic Salesforce set — cdp_*, wave_api, chatter_api, mcp_api) that every Salesforce
+      org serves on its custom domain. It authenticates humans into a login-gated shipper portal; it is not the
+      front door of a public Plains API and no Plains documentation references it.'
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/oauth-protected-resource
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/api-catalog.json
+    status: 401
+  - path: /.well-known/ai-plugin.json
+    status: 401
+  - path: /.well-known/ucp.json
+    status: 401
+  - path: /.well-known/acp.json
+    status: 401
+  - path: /.well-known/aauth-resource.json
+    status: 401
+  - path: /.well-known/apis.json
+    status: 401
+  - path: /apis.json
+    status: 401
+  - path: /apis.yml
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401
+- host: shipperappl.plainsallamerican.com
+  note: Plains Shipper Application Portal — a Salesforce Experience Cloud site (login required). The only 200 is
+    the Salesforce platform-generated OIDC discovery document; every other path returns the Salesforce 401 page.
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: plains-all-american-pipeline-shipperappl-openid-configuration.json
+    content_type: application/json;charset=UTF-8
+    note: 'Real OpenID Connect discovery document (issuer https://shipperappl.plainsallamerican.com, authorization_code
+      + refresh_token grants, PKCE S256). PLATFORM-AUTHORED: this is the stock Salesforce Experience Cloud identity
+      metadata (the scopes_supported list is the generic Salesforce set — cdp_*, wave_api, chatter_api, mcp_api)
+      that every Salesforce org serves on its custom domain. It authenticates humans into a login-gated shipper
+      portal; it is not the front door of a public Plains API and no Plains documentation references it.'
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/oauth-protected-resource
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/api-catalog.json
+    status: 401
+  - path: /.well-known/ai-plugin.json
+    status: 401
+  - path: /.well-known/ucp.json
+    status: 401
+  - path: /.well-known/acp.json
+    status: 401
+  - path: /.well-known/aauth-resource.json
+    status: 401
+  - path: /.well-known/apis.json
+    status: 401
+  - path: /apis.json
+    status: 401
+  - path: /apis.yml
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401

@@ -3,61 +3,132 @@ url: https://raw.githubusercontent.com/api-evangelist/plains-all-american-pipeli
 name: Plains All American Pipeline
 type: Index
 deliveryModel:
-  model: unknown
+  model: none
   open_source: false
   commercial: false
   callable_host: false
-  label: Delivery model not determined — needs a product licence on record
-  confidence: low
+  label: No API product — a midstream pipeline operator whose only online customer surfaces are login-gated Salesforce portals
+  confidence: high
   source:
-  - none
-  generated: '2026-08-28'
-  method: derived
+  - {url: 'https://www.plains.com/customers', status: 200, note: 'customer section links only to the Enom nominations portal and the Shipper Application Portal, both Salesforce Experience Cloud logins (probed 2026-09-17)'}
+  - {url: 'https://api.plains.com/', status: 404, note: 'host resolves but answers an empty 404 on every path; no documentation names it (probed 2026-09-17)'}
+  generated: '2026-09-17'
+  method: probed
 accessModel:
-  pricing: unknown
-  onboarding: unknown
+  pricing: none
+  onboarding: none
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
+  label: No public API access — shipper tooling is customer-only behind portal logins
+  confidence: high
   source:
-  - plans
-  - {url: 'https://www.paalp.com', status: 301, note: 'declared website redirects to https://www.plains.com/ — a different registrable domain (paalp.com -> plains.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
-  generated: '2026-07-22'
-  method: derived
+  - {url: 'https://www.paalp.com', status: 301, note: 'declared website redirects to https://www.plains.com/ — the company moved its corporate domain from paalp.com to plains.com (probed 2026-09-03, re-confirmed 2026-09-17)'}
+  - {url: 'https://www.paa-enom.com/s/', status: 302, note: 'Electronic Nominations (Enom) portal JS-redirects to /s/login — Salesforce Experience Cloud, credentials required (probed 2026-09-17)'}
+  - {url: 'https://shipperappl.plainsallamerican.com/s/', status: 200, note: 'Shipper Application Portal — Salesforce Experience Cloud login shell, no public reference (probed 2026-09-17)'}
+  generated: '2026-09-17'
+  method: probed
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/plains-all-american-pipeline.png
 tags:
   - Energy
+  - Pipelines
+  - Midstream
+  - Crude Oil
+  - Natural Gas Liquids
+  - Oil and Gas
+  - Logistics
+tags_raw:
+  - Energy
   - Pipeline
   - Midstream
+  - Crude Oil
+  - NGL
+  - Oil & Gas
+  - Logistics
 description: >-
-  Plains All American Pipeline is a major US corporation and Fortune 1000 company. The Plains All American Pipeline API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+  Plains All American Pipeline, L.P. (NASDAQ: PAA) is a Houston-based, Fortune 500 midstream energy company that
+  owns and operates pipeline transportation, terminalling, storage and gathering assets for crude oil and natural
+  gas liquids across the United States and Canada. Plains publishes no public API, developer portal, SDK or
+  machine-readable contract: its only online customer surfaces are the Electronic Nominations (Enom) portal and
+  the Shipper Application Portal, both login-gated Salesforce Experience Cloud sites, alongside public tariff
+  and crude-oil price-bulletin pages on plains.com. This profile records that absence honestly rather than
+  describing an API that does not exist.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-09-17'
 specificationVersion: '0.23'
-apis:
-  - aid: plains-all-american-pipeline:plains-all-american-pipeline-api
-    name: Plains All American Pipeline API
-    tags:
-      - Energy
-      - Pipeline
-      - Midstream
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.paalp.com
-    humanURL: https://developer.paalp.com
-    properties:
-      - url: https://developer.paalp.com/docs
-        type: Documentation
-    description: >-
-      The Plains All American Pipeline API provides access to platform services and data for enterprise integration and automation.
+apis: []
 common:
-  - type: DomainSecurity
-    url: security/plains-all-american-pipeline-domain-security.yml
+  - type: Investor Relations
+    url: https://ir.plains.com/
+  - type: Careers
+    url: https://www.plains.com/careers/
+  - type: Tariffs
+    url: https://www.plains.com/customer-services/tariffs/
+  - type: Website
+    url: https://www.plains.com
   - type: LinkedIn
     url: https://www.linkedin.com/company/plains-all-american
-  - type: Website
-    url: https://www.paalp.com
+  - type: PrivacyPolicy
+    url: https://www.plains.com/privacy-policy
+  - type: TermsOfService
+    url: https://www.plains.com/legal-notices
+  - type: Contact
+    url: https://www.plains.com/contact-us
+  - type: Newsroom
+    url: https://www.plains.com/newsroom/news
+  - type: InvestorRelations
+    url: https://ir.plains.com/investor-relations
+  - type: DomainSecurity
+    url: security/plains-all-american-pipeline-domain-security.yml
+  - type: WellKnown
+    url: well-known/plains-all-american-pipeline-well-known.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-customer-surfaces:
+  note: >-
+    Login-gated shipper tooling and public tariff pages. Recorded here, NOT as common[] link-properties,
+    so they are never read as a developer portal, sign-up or API surface — none of them is one.
+  surfaces:
+    - name: Electronic Nominations (Enom) Portal
+      url: https://www.paa-enom.com/
+      status: 302
+      note: Salesforce Experience Cloud; redirects to /s/login. Credentials issued to shippers only.
+    - name: Shipper Application Portal
+      url: https://shipperappl.plainsallamerican.com/s/
+      status: 200
+      note: Salesforce Experience Cloud login shell for new shipper applications.
+    - name: Tariffs
+      url: https://www.plains.com/customers/tariffs
+      status: 200
+      note: FERC / CER pipeline tariff documents and a tariff search page (JS-rendered).
+x-pointer-liveness:
+  checked: '2026-09-17'
+  note: >-
+    Every common[] URL above was fetched on 2026-09-17. www.plains.com pages: 200. LinkedIn: 200.
+    ir.plains.com: 403 Akamai Access Denied to our crawler — the page is linked from the corporate site nav and
+    exists; treated as live behind an edge policy. www.paa-enom.com: 302 to the Salesforce login (live, gated).
+    shipperappl.plainsallamerican.com/s/: 200 Salesforce login shell (live, gated). The previous record's
+    developer.paalp.com and api.paalp.com have no DNS records and were removed as fabricated stub hosts.
+x-enrichment:
+  date: '2026-09-17'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Plains is a crude-oil and NGL pipeline operator: plains.com carries tariffs, price bulletins and two
+    login-gated Salesforce shipper portals, api.plains.com answers an empty 404 on every path, and the stub
+    record's developer.paalp.com / api.paalp.com hosts do not exist in DNS.
+  evidence:
+    - url: https://www.plains.com/customers
+      status: 200
+    - url: https://api.plains.com/openapi.json
+      status: 404
+    - url: https://www.paa-enom.com/s/
+      status: 302
+    - url: https://www.plains.com/llms.txt
+      status: 404
+  checked: '2026-09-17'

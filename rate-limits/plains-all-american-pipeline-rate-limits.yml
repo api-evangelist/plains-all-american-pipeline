@@ -4,33 +4,36 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Plains All American Pipeline
 providerId: plains-all-american-pipeline
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+# Provenance: written by the API Evangelist bulk sweep dated 2026-05-04 (roadmap#35), then
+# re-searched against the provider's live site on 2026-09-17 and reduced to an honest zero.
+method: searched
+modified: '2026-09-17'
+reconciled: true
 tags:
-  - Rate Limiting
-  - Energy
-  - Pipeline
-  - Midstream
-notes: Plains All American Pipeline does not publish a public API and therefore does not publish
-  rate limits. Any shipper / counterparty connectivity is governed by bilateral contract and the
-  applicable FERC tariff.
-description: There is no public Plains All American Pipeline API to rate-limit. Shipper / customer
-  systems run on private B2B portals and EDI pipelines under bilateral terms; throughput, retry
-  behavior, and SLAs live in those contracts.
+- Rate Limiting
+- Energy
+- Pipeline
+- Midstream
+notes: 'Plains All American Pipeline publishes no public API and therefore no rate limits, quota headers or exhaustion
+  status codes; SEARCHED 2026-09-17 across plains.com and the two Salesforce shipper portals. The earlier bulk-sweep
+  "Shipper / Customer Connectivity" limit row was our inference and has been removed: limit_count is an honest zero.'
+description: There is no public Plains All American Pipeline API to rate-limit. Shipper / customer systems run on
+  private B2B portals and EDI pipelines under bilateral terms; throughput, retry behavior, and SLAs live in those
+  contracts.
 sources:
-  - https://www.plains.com/
-limits:
-  - name: Shipper / Customer Connectivity
-    scope: contract
-    metric: varies
-    limit: 'governed by bilateral shipper agreement; not publicly documented'
-policies:
-  - name: Contract-Defined Limits
-    description: Throughput and retry behavior live in the bilateral shipper / counterparty
-      contract.
+- url: https://www.plains.com/customers
+  status: 200
+  note: 'customer section: tariffs, nomination due dates, proration policies, crude-oil price bulletins, and links
+    to two login-gated Salesforce shipper portals — no API, pricing or developer page (searched 2026-09-17)'
+- url: https://www.plains.com/customers/tariffs
+  status: 200
+  note: FERC/CER tariff documents — the published price book for pipeline transportation, not for any API
+- url: https://api.plains.com/
+  status: 404
+  note: host exists but answers an empty 404 on every path
+limits: []
+policies: []
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
+limit_count: 0

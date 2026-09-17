@@ -4,50 +4,38 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Plains All American Pipeline
 providerId: plains-all-american-pipeline
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+# Provenance: written by the API Evangelist bulk sweep dated 2026-05-04 (roadmap#35), then
+# re-searched against the provider's live site on 2026-09-17 and reduced to an honest zero.
+method: searched
+modified: '2026-09-17'
+reconciled: true
 tags:
-  - Energy
-  - Pipeline
-  - Midstream
-  - Crude Oil
-  - NGL
-notes: Plains All American Pipeline is a midstream energy operator. It does not run a public
-  developer portal or sell self-service APIs. Any external integration (shipper nominations,
-  scheduling, FERC tariff filings, EDI) is operated via the company's bilateral shipper / customer
-  systems under tariff and contractual terms.
-description: Plains All American Pipeline is a US-based midstream energy company operating crude
-  oil and NGL pipelines and storage. It is not a software / API vendor. Shipper-facing systems
-  (nominations, scheduling, billing) are operated as private B2B customer portals, not as a
-  public, self-service API.
+- Energy
+- Pipeline
+- Midstream
+- Crude Oil
+- NGL
+notes: 'Plains All American Pipeline is a midstream energy operator. It does not run a public developer portal,
+  publish an API price book, or sell self-service API access; SEARCHED 2026-09-17 across plains.com (customers,
+  tariffs, legal notices, sitemap) and the two shipper portals — nothing priced beyond pipeline transportation tariffs.
+  The earlier bulk-sweep entry describing a "Shipper Integration Agreement" plan was our inference, not a published
+  tier, and has been removed: plan_count is an honest zero.'
+description: Plains All American Pipeline is a US-based midstream energy company operating crude oil and NGL pipelines
+  and storage. It is not a software / API vendor. Shipper-facing systems (nominations, scheduling, billing) are
+  operated as private B2B customer portals, not as a public, self-service API.
 sources:
-  - https://www.plains.com/
-plans:
-  - id: plains-shipper-customer
-    name: Shipper / Customer Integration
-    type: enterprise
-    description: Bilateral shipper or counterparty integration governing nominations, scheduling,
-      tariff billing, and operational data exchange. Governed by FERC tariffs and bilateral
-      contracts rather than a published price book.
-    entries:
-      - label: Shipper Integration Agreement
-        name: shipper_integration_agreement
-        type: flat
-        metric: contract
-        limit: -1
-        timeFrame: usage
-        geo: 'US/Canada'
-        unit: 1
-        price: contact Plains
-        userMultiplied: false
-    elements:
-      - name: Bilateral Shipper Agreement
-      - name: FERC Tariff Compliance
-      - name: Nominations and Scheduling
-      - name: EDI / SCADA Data Exchange
+- url: https://www.plains.com/customers
+  status: 200
+  note: 'customer section: tariffs, nomination due dates, proration policies, crude-oil price bulletins, and links
+    to two login-gated Salesforce shipper portals — no API, pricing or developer page (searched 2026-09-17)'
+- url: https://www.plains.com/customers/tariffs
+  status: 200
+  note: FERC/CER tariff documents — the published price book for pipeline transportation, not for any API
+- url: https://api.plains.com/
+  status: 404
+  note: host exists but answers an empty 404 on every path
+plans: []
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
+plan_count: 0

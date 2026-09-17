@@ -64,7 +64,7 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Plains All American Pipeline is a major US corporation and Fortune 1000 company. The Plains All American Pipeline API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+Plains All American Pipeline, L.P. (NASDAQ: PAA) is a Houston-based, Fortune 500 midstream energy company that owns and operates pipeline transportation, terminalling, storage and gathering assets for crude oil and natural gas liquids across the United States and Canada. Plains publishes no public API, developer portal, SDK or machine-readable contract: its only online customer surfaces are the Electronic Nominations (Enom) portal and the Shipper Application Portal, both login-gated Salesforce Experience Cloud sites, alongside public tariff and crude-oil price-bulletin pages on plains.com. This profile records that absence honestly rather than describing an API that does not exist.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/plains-all-american-pipeline/refs/heads/main/apis.yml)
 
@@ -72,12 +72,12 @@ Plains All American Pipeline is a major US corporation and Fortune 1000 company.
 
 ## Tags:
 
- - Energy, Pipeline, Midstream
+ - Energy, Pipeline, Midstream, Crude Oil, NGL, Oil & Gas, Logistics
 
 ## Timestamps
 
 - **Created:** 2026-04-19
-- **Modified:** 2026-04-19
+- **Modified:** 2026-09-17
 
 ## Maintainers
 
