@@ -1,4 +1,4 @@
-# Plains All American Pipeline (plains-all-american-pipeline)
+# Plains All American Pipeline
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,21 +66,97 @@
 
 Plains All American Pipeline, L.P. (NASDAQ: PAA) is a Houston-based, Fortune 500 midstream energy company that owns and operates pipeline transportation, terminalling, storage and gathering assets for crude oil and natural gas liquids across the United States and Canada. Plains publishes no public API, developer portal, SDK or machine-readable contract: its only online customer surfaces are the Electronic Nominations (Enom) portal and the Shipper Application Portal, both login-gated Salesforce Experience Cloud sites, alongside public tariff and crude-oil price-bulletin pages on plains.com. This profile records that absence honestly rather than describing an API that does not exist.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/plains-all-american-pipeline/refs/heads/main/apis.yml)
+**Areas:** Energy · Pipelines · Midstream · Crude Oil · NGL · Oil and Gas · Logistics
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Plains All American Pipeline on APIs.io
 
-## Tags:
+Everything profiled for Plains All American Pipeline is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/plains-all-american-pipeline/](https://apis.io/providers/plains-all-american-pipeline/)** — or go straight to one of the APIs or properties below.
 
- - Energy, Pipeline, Midstream, Crude Oil, NGL, Oil & Gas, Logistics
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-04-19
-- **Modified:** 2026-09-17
+#### Security (1)
 
-## Maintainers
+Authentication, trust centre, and vulnerability disclosure.
 
-**FN:** Kin Lane
+- [Plains All American Pipeline Domain Security](https://apis.io/security/plains-all-american-pipeline/plains-all-american-pipeline-domain-security/)
 
-**Email:** kin@apievangelist.com
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Plains All American Pipeline Plans Pricing](https://apis.io/plans/plains-all-american-pipeline/plains-all-american-pipeline-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Plains All American Pipeline Rate Limits](https://apis.io/rate-limits/plains-all-american-pipeline/plains-all-american-pipeline-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Plains All American Pipeline Finops](https://apis.io/finops/plains-all-american-pipeline/plains-all-american-pipeline-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.plains.com)
+- [Terms of service](https://www.plains.com/legal-notices)
+- [Privacy policy](https://www.plains.com/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 9.6** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 49.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 21.1 |
+
+**Agent readiness 17.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.4** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/plains-all-american-pipeline/](https://apis.io/providers/plains-all-american-pipeline/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Plains All American Pipeline: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/plains-all-american-pipeline/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
